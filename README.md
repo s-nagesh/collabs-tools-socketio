@@ -1,0 +1,2 @@
+
+Create a real-time collaboration tool where multiple users can edit a shared document simultaneously, similar to Google Docs. The main challenge is managing concurrent editing while ensuring data consistency and syncing changes across all users.

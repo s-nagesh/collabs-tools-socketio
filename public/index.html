@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Collaboration Tool</title>
+    <script defer src="/socket.io/socket.io.js"></script>
+    <script defer src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+        }
+        header {
+            width: 100%;
+            background-color: #6200ea;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        #editor {
+            width: 80%;
+            height: 70vh;
+            margin: 20px;
+            border: 1px solid #ccc;
+            padding: 1rem;
+            background-color: white;
+            overflow-y: auto;
+        }
+        button {
+            background-color: #6200ea;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            font-size: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+        }
+        button:hover {
+            background-color: #3700b3;
+        }
+        .instructions {
+            margin-top: 1rem;
+            text-align: center;
+            width: 80%;
+            line-height: 1.5rem;
+        }
+        .dark-mode {
+            background-color: #333;
+            color: #f4f4f9;
+        }
+        .dark-mode #editor {
+            background-color: #444;
+            color: white;
+            border-color: #555;
+        }
+        .dark-mode button {
+            background-color: #444;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Real-Time Collaboration Tool</h1>
+    </header>
+
+    <div class="instructions">
+        <p>Welcome to the real-time document editor! Here, multiple users can collaborate and edit this document together in real-time.</p>
+        <p>Just start typing in the editor below, and see your changes reflected instantly for all connected users.</p>
+    </div>
+
+    <div id="editor" contenteditable="true">
+        Start typing here...
+    </div>
+
+    <button id="toggle-mode">Toggle Dark Mode</button>
+
+    <script>
+        // Dark mode toggle
+        const toggleButton = document.getElementById('toggle-mode');
+        toggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+    </script>
+</body>
+</html>
